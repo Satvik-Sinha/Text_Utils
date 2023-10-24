@@ -1,12 +1,11 @@
 import './App.css';
 import React, { useState } from 'react';
-import {BrowserRouter,
-  Routes,
-  Route} from "react-router-dom";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Navbar from './Components/Navbar';
 import Alert from './Components/Alert';
 import TextForm from "./Components/TextForm";
 import About from "./Components/About";
+
 function App() {
   const [mode, setMode] = useState('light');
   const toggleMode=()=>{
@@ -44,7 +43,6 @@ function App() {
      <Alert alert={alert}/>
       <Routes>
           <Route exact path="/about" element={<About mode={mode}/>}/>
-         
           <Route exact path="/" element={<div className="container"><TextForm heading="Enter the text" mode={mode} showAlert={showAlert}/></div>}/>    
         </Routes>
       
